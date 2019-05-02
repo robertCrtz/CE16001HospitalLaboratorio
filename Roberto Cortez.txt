@@ -45,13 +45,13 @@ CREATE TABLE dbo.tipoMuestra
 INSERT INTO paciente(codPaciente, estadoDocPac, CausaCitaPac,
 	estadoPaciente,	fechaCitaPaciente)
 VALUES(1, 'Vigente', 'Infeccion estomacal', 'En tratamiento', '2019-04-03 11:23:43:000'),
-(2, 'Vigente','InfecciÛn pulmones','En espera','2019-04-10 05:10:54:000'),
-(3,'En revisiÛn','En investigaciÛn','En espera','2019-03-01 07:30:45:000'),
-(4,'Vigente','InfecciÛn urinaria','En tratamiento','2019-03-12 08:31:14:000'),
-(5,'Vigente','En investigaciÛn','En espera','2019-04-12 08:56:54:000 '),
-(6,'En revisiÛn','En investigaciÛn','En espera','2019-02-10 09:56:45:000'),
-(7,'En revisiÛn','InfecciÛn estomacal','En tratamiento','2019-04-06 10:10:24:000'),
-(8,'Vigente','Infeccion riÒones','En tratamiento','2019-05-10 06:14:21:000'),
+(2, 'Vigente','Infecci√≥n pulmones','En espera','2019-04-10 05:10:54:000'),
+(3,'En revisi√≥n','En investigaci√≥n','En espera','2019-03-01 07:30:45:000'),
+(4,'Vigente','Infecci√≥n urinaria','En tratamiento','2019-03-12 08:31:14:000'),
+(5,'Vigente','En investigaci√≥n','En espera','2019-04-12 08:56:54:000 '),
+(6,'En revisi√≥n','En investigaci√≥n','En espera','2019-02-10 09:56:45:000'),
+(7,'En revisi√≥n','Infecci√≥n estomacal','En tratamiento','2019-04-06 10:10:24:000'),
+(8,'Vigente','Infeccion ri√±ones','En tratamiento','2019-05-10 06:14:21:000'),
 (9,'Vigente','En investigacion','En espera','2019-01-09 11:10:35:000'),
 (10,'Vigente','Infeccion higado','En tratamiento','2019-02-18 10:30:59:000');
 
@@ -68,10 +68,10 @@ VALUES(1, 'celular'), (2, 'correo electronico'), (3,'Facebook'), (4,'telefax'),
 (9,'correo electronico trabajo'),(10,'Messenger');
 
 INSERT INTO investigacion(codInvestigacion, codTipoInvest,descripcionInv, fechaInv)
-VALUES(1, 1, 'investigacion sobre cÈlulas cancerÌgenas', '2018-09-22 08:05:56:000'),
+VALUES(1, 1, 'investigacion sobre c√©lulas cancer√≠genas', '2018-09-22 08:05:56:000'),
 (2,3,'Investigacion sobre nivel de grasa en la sangre', '2019-02-02 01:10:20:000'),
 (3,9,'Investigacion sobre VIH SIDA','2019-01-12 14:54:55:000'),
-(4,2,'Posible infecciÛn urinaria','2018-12-24 22:40:14:000'),
+(4,2,'Posible infecci√≥n urinaria','2018-12-24 22:40:14:000'),
 (5,8,'Investigacion de bacterias potencialmente peligrosas', '2019-05-11 10:22:01:000'),
 (6,6,'Estado del higado', '2019-02-11 09:09:24:000'),
 (7,5,'Estado de pulmones del paciente','2019-01-01 05:41:00:000'),
@@ -80,22 +80,22 @@ VALUES(1, 1, 'investigacion sobre cÈlulas cancerÌgenas', '2018-09-22 08:05:56:00
 (10,2,'Posible infeccion','2019-02-14 06:30:21:000');
 
 INSERT INTO tipoInvestigacion (codTipoInvest, tipoInvestigacion)
-VALUES(1, 'CÈlulas'),(2,'Orina'),(3,'Sangre'),(4,'Heces'),(5,'pulmones'),(6,'Higado'),
+VALUES(1, 'C√©lulas'),(2,'Orina'),(3,'Sangre'),(4,'Heces'),(5,'pulmones'),(6,'Higado'),
 (7,'Intestino'),(8,'Bacterias'),(9,'Virus'),(10,'Pancreas');
 
 INSERT INTO muestras (codMuestra, codTipoMuestra, codPaciente,
 	descripcionM, fechaMuestra)
-VALUES(1, 1, 1, 'Se analizar· la infecciÛn por medio de la muestra de sangre que ya le fue extraida al paciente', '2019-01-28 10:16:50'),
-(2,9,4,'An·lisis para conocer el tipo de virus','2019-02-02 01:10:20:000'),
-(3,3,2,'Analizando Sangre del paciente tal para conocer estado cardÌaco','2019-03-12 08:31:14:000'),
-(4,6,3,'An·lisis para conocer el tipo de par·sito','2019-01-12 14:54:55:000'),
-(5,4,6,'Se analizar· las heces para determinar causas del problema','2019-03-12 08:31:14:000'),
-(6,7,5,'Se necesitar· obtener una muestra ambiental para conocer el problema del paciente','2019-02-14 06:30:21:000'),
-(7,5,7,'Se analiz·r· el tipo de gas al cual daÒÛ al paciente','2019-02-10 09:56:45:000'),
-(8,10,9,'Se analizar· un agente desconocido y se obtendr·n respuestas hasta la fecha estipulada','2019-03-01 07:30:45:000'),
-(9,2,8,'Se analizar· la orina del paciente para dar con el paradero de la infecciÛn','2019-04-03 11:23:43:000'),
-(10,8,10,'Se analizar· el tipo de bacteria que afecta al paciente','2019-06-11 15:21:35:000');
+VALUES(1, 1, 1, 'Se analizar√° la infecci√≥n por medio de la muestra de sangre que ya le fue extraida al paciente', '2019-01-28 10:16:50'),
+(2,9,4,'An√°lisis para conocer el tipo de virus','2018-02-02 01:10:20:000'),
+(3,3,2,'Analizando Sangre del paciente tal para conocer estado card√≠aco','2019-03-12 08:31:14:000'),
+(4,6,3,'An√°lisis para conocer el tipo de par√°sito','2019-01-12 14:54:55:000'),
+(5,4,6,'Se analizar√° las heces para determinar causas del problema','2019-03-12 08:31:14:000'),
+(6,7,5,'Se necesitar√° obtener una muestra ambiental para conocer el problema del paciente','2019-02-14 06:30:21:000'),
+(7,5,7,'Se analiz√°r√° el tipo de gas al cual da√±√≥ al paciente','2019-02-10 09:56:45:000'),
+(8,10,9,'Se analizar√° un agente desconocido y se obtendr√°n respuestas hasta la fecha estipulada','2019-03-01 07:30:45:000'),
+(9,2,8,'Se analizar√° la orina del paciente para dar con el paradero de la infecci√≥n','2018-04-03 11:23:43:000'),
+(10,8,10,'Se analizar√° el tipo de bacteria que afecta al paciente','2017-06-11 15:21:35:000');
 
 INSERT INTO tipoMuestra (codTipoMuestra, tipoMuestra)
-VALUES(1, 'CÈlulas'),(2,'Orina'),(3,'Sangre'),(4,'Heces'),(5,'Gases'),(6,'Par·sitos'),
+VALUES(1, 'C√©lulas'),(2,'Orina'),(3,'Sangre'),(4,'Heces'),(5,'Gases'),(6,'Par√°sitos'),
 (7,'Ambiental'),(8,'Bacterias'),(9,'Virus'),(10,'Agente Desconocido');
