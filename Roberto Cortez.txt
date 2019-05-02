@@ -1,0 +1,101 @@
+CREATE DATABASE Laboratorio
+USE Laboratorio
+GO
+
+CREATE TABLE dbo.paciente
+	(codPaciente int NOT NULL,
+	estadoDocPac varchar(20),
+	CausaCitaPac varchar(20),
+	estadoPaciente varchar(20),
+	fechaCitaPaciente datetime);
+
+CREATE TABLE dbo.contacto
+	(codContacto  int NOT NULL,
+	codPaciente  int NOT NULL,
+	codTipoContacto int NOT NULL,
+	contacto varchar(20));
+
+
+CREATE TABLE dbo.tipoContacto
+	(codTipoContacto int NOT NULL,
+	tipoContacto varchar(25));
+
+CREATE TABLE dbo.investigacion
+	(codInvestigacion int NOT NULL,
+	codTipoInvest int NOT NULL,
+	descripcionInv varchar(50),
+	fechaInv datetime);
+
+CREATE TABLE dbo.tipoInvestigacion
+	(codTipoInvest int NOT NULL,
+	tipoInvestigacion varchar(50));
+
+CREATE TABLE dbo.muestras
+	(codMuestra int NOT NULL,
+	codTipoMuestra int NOT NULL,
+	codPaciente int NOT NULL,
+	descripcionM varchar(50),
+	fechaMuestra datetime);
+
+CREATE TABLE dbo.tipoMuestra
+	(codTipoMuestra int NOT NULL,
+	tipoMuestra varchar(50));
+
+
+INSERT INTO paciente(codPaciente, estadoDocPac, CausaCitaPac,
+	estadoPaciente,	fechaCitaPaciente)
+VALUES(1, 'Vigente', 'Infeccion estomacal', 'En tratamiento', '2019-04-03 11:23:43:000'),
+(2, 'Vigente','Infección pulmones','En espera','2019-04-10 05:10:54:000'),
+(3,'En revisión','En investigación','En espera','2019-03-01 07:30:45:000'),
+(4,'Vigente','Infección urinaria','En tratamiento','2019-03-12 08:31:14:000'),
+(5,'Vigente','En investigación','En espera','2019-04-12 08:56:54:000 '),
+(6,'En revisión','En investigación','En espera','2019-02-10 09:56:45:000'),
+(7,'En revisión','Infección estomacal','En tratamiento','2019-04-06 10:10:24:000'),
+(8,'Vigente','Infeccion riñones','En tratamiento','2019-05-10 06:14:21:000'),
+(9,'Vigente','En investigacion','En espera','2019-01-09 11:10:35:000'),
+(10,'Vigente','Infeccion higado','En tratamiento','2019-02-18 10:30:59:000');
+
+INSERT INTO contacto(codContacto, codPaciente, codTipoContacto,
+	contacto) 
+VALUES(1, 1, 1, '7106-8970'),(2,1,2,'fulano@gmail.com'),(3,2,1,'7815-6544'),
+(4,10,5,'2255-7487'),(5,7,3,'Alejandro Hernandez'),(6,10,8,'2266-4411'),
+(7,3,9,'mengano@microsoft.com'),(8,5,7,'7725-3131'),(9,8,10,'Juancito'),
+(10,4,3,'Edgardo Gutierrez');
+
+INSERT INTO tipoContacto(codTipoContacto, tipoContacto)
+VALUES(1, 'celular'), (2, 'correo electronico'), (3,'Facebook'), (4,'telefax'),
+(5,'telefono casa'),(6,'telefono oficina'),(7,'segundo celular'),(8,'telefono oficina segundo'),
+(9,'correo electronico trabajo'),(10,'Messenger');
+
+INSERT INTO investigacion(codInvestigacion, codTipoInvest,descripcionInv, fechaInv)
+VALUES(1, 1, 'investigacion sobre células cancerígenas', '2018-09-22 08:05:56:000'),
+(2,3,'Investigacion sobre nivel de grasa en la sangre', '2019-02-02 01:10:20:000'),
+(3,9,'Investigacion sobre VIH SIDA','2019-01-12 14:54:55:000'),
+(4,2,'Posible infección urinaria','2018-12-24 22:40:14:000'),
+(5,8,'Investigacion de bacterias potencialmente peligrosas', '2019-05-11 10:22:01:000'),
+(6,6,'Estado del higado', '2019-02-11 09:09:24:000'),
+(7,5,'Estado de pulmones del paciente','2019-01-01 05:41:00:000'),
+(8,4,'Investigacion sobre heces','2019-04-01 14:05:09:000'),
+(9,10,'Estado del pancreas','2019-03-07 12:45:36:000'),
+(10,2,'Posible infeccion','2019-02-14 06:30:21:000');
+
+INSERT INTO tipoInvestigacion (codTipoInvest, tipoInvestigacion)
+VALUES(1, 'Células'),(2,'Orina'),(3,'Sangre'),(4,'Heces'),(5,'pulmones'),(6,'Higado'),
+(7,'Intestino'),(8,'Bacterias'),(9,'Virus'),(10,'Pancreas');
+
+INSERT INTO muestras (codMuestra, codTipoMuestra, codPaciente,
+	descripcionM, fechaMuestra)
+VALUES(1, 1, 1, 'Se analizará la infección por medio de la muestra de sangre que ya le fue extraida al paciente', '2019-01-28 10:16:50'),
+(2,9,4,'Análisis para conocer el tipo de virus','2019-02-02 01:10:20:000'),
+(3,3,2,'Analizando Sangre del paciente tal para conocer estado cardíaco','2019-03-12 08:31:14:000'),
+(4,6,3,'Análisis para conocer el tipo de parásito','2019-01-12 14:54:55:000'),
+(5,4,6,'Se analizará las heces para determinar causas del problema','2019-03-12 08:31:14:000'),
+(6,7,5,'Se necesitará obtener una muestra ambiental para conocer el problema del paciente','2019-02-14 06:30:21:000'),
+(7,5,7,'Se analizárá el tipo de gas al cual dañó al paciente','2019-02-10 09:56:45:000'),
+(8,10,9,'Se analizará un agente desconocido y se obtendrán respuestas hasta la fecha estipulada','2019-03-01 07:30:45:000'),
+(9,2,8,'Se analizará la orina del paciente para dar con el paradero de la infección','2019-04-03 11:23:43:000'),
+(10,8,10,'Se analizará el tipo de bacteria que afecta al paciente','2019-06-11 15:21:35:000');
+
+INSERT INTO tipoMuestra (codTipoMuestra, tipoMuestra)
+VALUES(1, 'Células'),(2,'Orina'),(3,'Sangre'),(4,'Heces'),(5,'Gases'),(6,'Parásitos'),
+(7,'Ambiental'),(8,'Bacterias'),(9,'Virus'),(10,'Agente Desconocido');
